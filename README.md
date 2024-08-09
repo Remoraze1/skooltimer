@@ -1,1 +1,2 @@
-# website
+# Timer 
+Just a simple website
