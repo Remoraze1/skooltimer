@@ -9,18 +9,31 @@
             // URL of your login page
             const loginUrl = 'https://your-username.github.io/login/';
             
-            // Check if the user is coming from the login page
-            const referrer = document.referrer;
+            // Extract token from URL
+            const urlParams = new URLSearchParams(window.location.search);
+            const token = urlParams.get('token');
 
-            // Redirect to login if not coming from the login page
-            if (!referrer.startsWith(loginUrl)) {
+            // Simple decoding for demonstration
+            function decodeToken(token) {
+                try {
+                    const decoded = atob(token).split(':');
+                    return { username: decoded[0], password: decoded[1] };
+                } catch (e) {
+                    return null;
+                }
+            }
+
+            // Check if token is valid
+            const user = decodeToken(token);
+            if (!user) {
                 window.location.href = loginUrl;
             }
+            // You can add additional checks here for the validity of the user if needed
         });
     </script>
 </head>
 <body>
-    <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -38,6 +51,13 @@
 </html>
 </body>
 </html>
+
+
+
+
+
+
+
 
 
 
