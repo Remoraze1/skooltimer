@@ -3,6 +3,28 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Protected Page</title>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // URL of your login page
+            const loginUrl = 'https://your-username.github.io/login/';
+            
+            // Check if the user is coming from the login page
+            const referrer = document.referrer;
+
+            // Redirect to login if not coming from the login page
+            if (!referrer.startsWith(loginUrl)) {
+                window.location.href = loginUrl;
+            }
+        });
+    </script>
+</head>
+<body>
+    <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Skool Timer</title>
     <link rel="stylesheet" href="styles.css">
 </head>
@@ -14,3 +36,18 @@
     <script src="timer.js"></script>
 </body>
 </html>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
